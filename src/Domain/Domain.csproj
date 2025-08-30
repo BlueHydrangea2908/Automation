@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CustomGenerics\CustomGenerics.csproj" />
+    <ProjectReference Include="..\CustomGenerics\CustomGenerics.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-﻿using Domain.Contracts.DI;
+﻿using Domain.DI;
 
-namespace Domain.Entities.Plugin;
+namespace Domain.Plugin;
 public interface IPluginDescription
 {
     public string Name { get; }
@@ -11,20 +11,11 @@ public interface IPluginDescription
 
 public interface IPluginIdentity : IEquatable<IPluginIdentity>
 {
-    public Guid Guid { get; }
+    //public Guid Guid { get; }
 }
 
-
-public interface IPluginMetadata : IPluginIdentity, IPluginDescription
-{
-
-
-}
-
-
-public interface IPlugin : IPluginMetadata, IDisposable, IAsyncDisposable
+public interface IPlugin : IPluginIdentity, IPluginDescription, IDisposable, IAsyncDisposable
 {
     public void ConfigureServices(IServiceRegistrar registrar);
     public Task StartAsync(IServiceResolver resolver, CancellationToken token);
-
 }

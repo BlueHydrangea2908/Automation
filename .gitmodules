@@ -1,0 +1,3 @@
+[submodule "src/CustomGenerics"]
+	path = src/CustomGenerics
+	url = https://github.com/BlueHydrangea2908/CustomGenerics.git

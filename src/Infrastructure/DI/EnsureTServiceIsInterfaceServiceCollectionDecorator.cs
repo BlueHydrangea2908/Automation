@@ -1,12 +1,12 @@
-﻿using Domain.Contracts.DI;
+﻿using Domain.DI;
 
 namespace Infrastructure.DI;
 
-public class EnsureTServiceIsInterfaceServiceCollectionDecorator : IServiceCollection
+public class EnsureTServiceIsInterfaceServiceCollectionDecorator : IServiceContainer
 {
-    private readonly IServiceCollection _inner;
+    private readonly IServiceContainer _inner;
 
-    public EnsureTServiceIsInterfaceServiceCollectionDecorator(IServiceCollection inner)
+    public EnsureTServiceIsInterfaceServiceCollectionDecorator(IServiceContainer inner)
     {
         _inner = inner;
     }

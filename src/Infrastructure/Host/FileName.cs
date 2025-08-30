@@ -1,7 +1,6 @@
 ﻿using CustomGenerics;
-using Domain.Contracts.DI;
-using Domain.Entities.Host;
-using Domain.Entities.Plugin;
+using Domain.DI;
+using Domain.Plugin;
 using Infrastructure.DI;
 
 namespace Infrastructure.Host;
@@ -11,7 +10,7 @@ public interface IPluginSource { }
 public abstract class PluginHostBase : IPluginHost
 {
 
-    public PluginHostBase(IServiceCollection serviceCollection, IRepositoryAsync<IPlugin> pluginRepos)
+    public PluginHostBase(IServiceContainer serviceCollection, IRepositoryAsync<IPlugin> pluginRepos)
     {
         ServiceCollection = serviceCollection;
         PluginRepos = pluginRepos;
